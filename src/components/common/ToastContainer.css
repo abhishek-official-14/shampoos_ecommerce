@@ -1,0 +1,58 @@
+/* src/components/common/ToastContainer.css */
+.toast-container-wrapper {
+  position: fixed;
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.toast-container-wrapper * {
+  pointer-events: auto;
+}
+
+.toast-container-position-top-left {
+  top: 1rem;
+  left: 1rem;
+}
+
+.toast-container-position-top-center {
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.toast-container-position-top-right {
+  top: 1rem;
+  right: 1rem;
+}
+
+.toast-container-position-bottom-left {
+  bottom: 1rem;
+  left: 1rem;
+}
+
+.toast-container-position-bottom-center {
+  bottom: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.toast-container-position-bottom-right {
+  bottom: 1rem;
+  right: 1rem;
+}
+
+@media (max-width: 640px) {
+  .toast-container-wrapper {
+    width: calc(100% - 1rem);
+    left: 0.5rem;
+    right: 0.5rem;
+  }
+  
+  .toast-container-position-top-left,
+  .toast-container-position-top-right,
+  .toast-container-position-bottom-left,
+  .toast-container-position-bottom-right {
+    left: 0.5rem;
+    right: 0.5rem;
+  }
+}

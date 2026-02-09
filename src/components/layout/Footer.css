@@ -1,0 +1,57 @@
+/* src/components/layout/Footer.css */
+.footer {
+  background: linear-gradient(to bottom, #f9fafb, #ffffff);
+  border-top: 1px solid rgba(229, 231, 235, 0.8);
+}
+
+.footer-section {
+  transition: transform 0.3s ease;
+}
+
+.footer-section:hover {
+  transform: translateY(-5px);
+}
+
+.social-icon {
+  transition: all 0.3s ease;
+  border-radius: 50%;
+  padding: 0.5rem;
+}
+
+.social-icon:hover {
+  background: linear-gradient(135deg, #0ea5e9, #ec4899);
+  color: white;
+  transform: translateY(-3px) scale(1.1);
+}
+
+.newsletter-input {
+  transition: all 0.3s ease;
+}
+
+.newsletter-input:focus {
+  box-shadow: 0 0 0 3px rgba(14, 165, 233, 0.1);
+  border-color: #0ea5e9;
+}
+
+.footer-links li {
+  margin-bottom: 0.75rem;
+}
+
+.footer-links a {
+  position: relative;
+  padding-left: 0.5rem;
+}
+
+.footer-links a::before {
+  content: '→';
+  position: absolute;
+  left: -1rem;
+  opacity: 0;
+  transition: all 0.3s ease;
+}
+
+.footer-links a:hover::before {
+  left: -0.5rem;
+  opacity: 1;
+  color: #0ea5e9;
+}

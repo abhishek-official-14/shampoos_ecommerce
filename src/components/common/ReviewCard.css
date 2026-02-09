@@ -1,0 +1,82 @@
+/* src/components/common/ReviewCard.css */
+.review-card {
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.review-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+}
+
+.review-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(to bottom, #0ea5e9, #ec4899);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.review-card:hover::before {
+  opacity: 1;
+}
+
+.review-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.reviewer-name {
+  font-weight: 600;
+  color: #1f2937;
+}
+
+.review-date {
+  color: #6b7280;
+  font-size: 0.875rem;
+  white-space: nowrap;
+}
+
+.star-rating {
+  display: flex;
+  gap: 0.125rem;
+  margin-top: 0.25rem;
+}
+
+.star-filled {
+  color: #fbbf24;
+  fill: currentColor;
+}
+
+.star-empty {
+  color: #d1d5db;
+}
+
+.review-text {
+  color: #4b5563;
+  line-height: 1.6;
+  position: relative;
+  padding-top: 1rem;
+}
+
+.review-text::before {
+  content: '"';
+  position: absolute;
+  top: -0.5rem;
+  left: -0.5rem;
+  font-size: 3rem;
+  color: #dbeafe;
+  font-family: Georgia, serif;
+  opacity: 0.5;
+}
+
+.review-card:hover .review-text {
+  color: #374151;
+}

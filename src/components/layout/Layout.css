@@ -1,0 +1,262 @@
+/* src/components/layout/Layout.css */
+.layout {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #fafafa 0%, #f5f5f5 100%);
+}
+
+.layout-main {
+  flex: 1;
+  animation: fadeIn 0.5s ease;
+}
+
+.layout-content {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.layout-transition {
+  animation: pageTransition 0.3s ease;
+}
+
+@keyframes pageTransition {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.layout-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: 
+    radial-gradient(circle at 15% 50%, rgba(14, 165, 233, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 85% 30%, rgba(236, 72, 153, 0.05) 0%, transparent 50%);
+  z-index: -1;
+  pointer-events: none;
+}
+
+.layout-container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 640px) {
+  .layout-container {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .layout-container {
+    padding: 0 2rem;
+  }
+}
+
+.layout-section {
+  padding: 3rem 0;
+}
+
+@media (min-width: 768px) {
+  .layout-section {
+    padding: 4rem 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .layout-section {
+    padding: 5rem 0;
+  }
+}
+
+.layout-grid {
+  display: grid;
+  gap: 2rem;
+}
+
+.layout-grid-cols-1 {
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 768px) {
+  .layout-grid-cols-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .layout-grid-cols-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  
+  .layout-grid-cols-4 {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.layout-centered {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 200px);
+  text-align: center;
+}
+
+.layout-padding {
+  padding: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .layout-padding {
+    padding: 2rem;
+  }
+}
+
+.layout-margin {
+  margin: 1.5rem 0;
+}
+
+.layout-divider {
+  height: 1px;
+  background: linear-gradient(to right, transparent, #e5e7eb, transparent);
+  margin: 2rem 0;
+}
+
+.layout-shadow {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border-radius: 1rem;
+  overflow: hidden;
+}
+
+.layout-glass {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 1rem;
+}
+
+.layout-gradient {
+  background: linear-gradient(135deg, #f0f9ff 0%, #fdf2f8 100%);
+  border-radius: 1rem;
+}
+
+.layout-error {
+  background: linear-gradient(135deg, #fef2f2 0%, #fff7ed 100%);
+  border-radius: 1rem;
+  padding: 3rem;
+  text-align: center;
+}
+
+.layout-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 1rem;
+}
+
+.layout-scroll {
+  overflow-y: auto;
+  max-height: 600px;
+}
+
+.layout-scroll::-webkit-scrollbar {
+  width: 8px;
+}
+
+.layout-scroll::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 4px;
+}
+
+.layout-scroll::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+  border-radius: 4px;
+}
+
+.layout-scroll::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+.layout-responsive-image {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  object-fit: cover;
+  border-radius: 0.75rem;
+}
+
+.layout-responsive-video {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+  border-radius: 0.75rem;
+}
+
+.layout-responsive-video iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.layout-sticky {
+  position: sticky;
+  top: 1rem;
+  z-index: 10;
+}
+
+.layout-fixed {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 50;
+}
+
+.layout-fixed-button {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0ea5e9, #ec4899);
+  color: white;
+  border: none;
+  box-shadow: 0 8px 25px rgba(14, 165, 233, 0.3);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  transition: all 0.3s ease;
+}
+
+.layout-fixed-button:hover {
+  transform: scale(1.1);
+  box-shadow: 0 12px 30px rgba(14, 165, 233, 0.4);
+}
+
+@media (max-width: 768px) {
+  .layout-fixed {
+    bottom: 1rem;
+    right: 1rem;
+  }
+  
+  .layout-fixed-button {
+    width: 50px;
+    height: 50px;
+    font-size: 1.25rem;
+  }
+}

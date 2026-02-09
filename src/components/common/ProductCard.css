@@ -1,0 +1,76 @@
+/* src/components/common/ProductCard.css */
+.product-card {
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  overflow: hidden;
+  position: relative;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+}
+
+.product-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(to right, #0ea5e9, #ec4899);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover::before {
+  transform: scaleX(1);
+}
+
+.product-image-container {
+  overflow: hidden;
+  position: relative;
+}
+
+.product-image {
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.product-card:hover .product-image {
+  transform: scale(1.1);
+}
+
+.discount-badge {
+  animation: bounce 2s infinite;
+  box-shadow: 0 4px 12px rgba(219, 39, 119, 0.3);
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.rating-stars {
+  display: inline-flex;
+  align-items: center;
+}
+
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.price-animation {
+  transition: all 0.3s ease;
+}
+
+.product-card:hover .price-animation {
+  color: #0c4a6e;
+  transform: scale(1.05);
+}

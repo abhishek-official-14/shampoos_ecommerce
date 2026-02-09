@@ -1,0 +1,189 @@
+/* src/styles/responsive.css */
+/* Mobile-first responsive utilities */
+
+/* Container padding */
+.container-responsive {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+
+@media (min-width: 640px) {
+  .container-responsive {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container-responsive {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* Responsive typography */
+.text-responsive {
+  font-size: 1rem;
+  line-height: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .text-responsive {
+    font-size: 1.125rem;
+    line-height: 1.75rem;
+  }
+}
+
+.heading-responsive {
+  font-size: 1.875rem;
+  line-height: 2.25rem;
+}
+
+@media (min-width: 640px) {
+  .heading-responsive {
+    font-size: 2.25rem;
+    line-height: 2.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .heading-responsive {
+    font-size: 3rem;
+    line-height: 1;
+  }
+}
+
+/* Responsive grid */
+.grid-responsive {
+  display: grid;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  gap: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .grid-responsive {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid-responsive {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1280px) {
+  .grid-responsive {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+/* Responsive spacing */
+.spacing-responsive {
+  padding: 1rem;
+}
+
+@media (min-width: 640px) {
+  .spacing-responsive {
+    padding: 1.5rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .spacing-responsive {
+    padding: 2rem;
+  }
+}
+
+/* Mobile menu animations */
+.mobile-menu-enter {
+  transform: translateX(-100%);
+}
+
+.mobile-menu-enter-active {
+  transform: translateX(0);
+  transition: transform 300ms ease;
+}
+
+.mobile-menu-exit {
+  transform: translateX(0);
+}
+
+.mobile-menu-exit-active {
+  transform: translateX(-100%);
+  transition: transform 300ms ease;
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .touch-optimized button,
+  .touch-optimized a {
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  .touch-optimized input,
+  .touch-optimized select,
+  .touch-optimized textarea {
+    font-size: 16px;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+  .dark-mode-auto {
+    background: #1f2937;
+    color: #f9fafb;
+  }
+}
+
+/* Landscape optimizations */
+@media (orientation: landscape) and (max-height: 600px) {
+  .landscape-compact {
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+}
+
+/* High contrast mode */
+@media (prefers-contrast: high) {
+  .high-contrast {
+    border-width: 2px;
+  }
+}
+
+/* Very large screens */
+@media (min-width: 1920px) {
+  .ultra-wide {
+    max-width: 1800px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+/* Print optimization */
+@media print {
+  .print-break-inside-avoid {
+    break-inside: avoid;
+  }
+  
+  .print-break-before {
+    break-before: page;
+  }
+  
+  .print-break-after {
+    break-after: page;
+  }
+}
